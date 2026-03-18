@@ -1,0 +1,397 @@
+*{
+
+}
+
+.maindiv{
+	border-top: 3px solid #e50000;
+	margin: 0;
+	padding: 0;
+}
+.maindiv2{
+	margin-top: 10px;
+	border-bottom: 1px solid #e50000;
+	text-align: center;
+}
+.logo{
+	margin-top: 15px;
+}
+.anchor{
+	margin-bottom: 60px;
+}
+.a1{
+	color: black;
+}
+
+h1{
+	background-color: black;
+	color: white;
+	width: 210px;
+	height: 80px;
+	text-align: center;
+	padding: 15px;
+	margin-left: -20px;
+	margin-top:0px;
+}
+
+
+.showcase{
+		background-color: #262525;
+		display: flex;
+}
+.dashboard{
+	width: 220px;
+}
+
+ul{
+	list-style: none;
+	margin-left: -40px;
+}
+ul li{
+	margin-bottom: 10px;
+	color: #fff;;
+	border-bottom: 1px solid #fff;;
+	padding: 8px;
+}
+li:hover{
+	background-color: #c00000;
+	cursor: pointer;
+}
+.dashboard p{
+	color: #fff;
+	font-size: 12px;
+	text-align: c
+}
+.white{
+	background-color: #fff;
+	padding-bottom: 20px;
+	margin-bottom: 100px;
+	border: 1px red black;
+}
+.sales{
+	width: 180px;
+	height: 71px;
+	border-bottom: 1px solid silver;
+	margin-bottom: 17px;
+}
+.icon1{
+	float: left;
+	height: 70px;
+	width: 60px;
+}
+.icon1div{
+	float: right;
+	width: 100px;
+
+}
+.a2{
+	font-size: 8px;
+}
+.table1{
+	width: 100px;
+	font-size: 12px;
+	margin-top: -10px;
+}
+.saletables{
+	margin-top: 50px;
+}
+.orange{
+	color: #ff8761;
+}
+.blue{
+	color: #57bdde;
+}
+.purple{
+	color: #b198dc;
+}
+.bold{
+	font-weight: bolder;
+}
+.glyphicon-refresh{
+	color:#57bdde;
+	margin-left: 30px;
+}
+h5{
+	font-weight: bolder;
+}
+
+/*--responsive--*/
+@media(max-width:1920px){
+	
+}
+@media(max-width:1680px){
+	
+}
+@media(max-width:1600px){
+	
+}
+@media(max-width:1440px){
+}
+@media(max-width:1366px){
+}
+@media(max-width:1280px){
+}
+
+@media(max-width:1080px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: -20px !important;
+}
+}
+
+@media(max-width:1024px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: -20px !important;
+}
+}
+@media(max-width:991px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 218px !important;
+}
+}
+@media(max-width:900px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 218px !important;
+}
+}
+@media(max-width:800px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 200px !important;
+}
+}
+
+@media(max-width:767px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 200px !important;
+}
+}
+@media(max-width:736px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 195px !important;
+text-align: center !important;
+}
+}
+@media(max-width:667px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 155px !important;
+}
+
+}
+@media(max-width:640px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 145px !important;
+}
+
+}
+@media(max-width:600px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 140px !important;
+}
+}
+@media(max-width:568px){
+.footer{
+	width: 100%;
+}
+.setC{
+	margin-left:99px !important;
+	text-align: center !important;
+	margin-top: -30px !important;
+}
+.transbox{
+margin-left: 87px !important;
+}
+.sales{
+		color: green;
+}
+}
+@media(max-width:480px){
+
+}
+@media(max-width:440px){
+
+}
+@media(max-width:414px){
+.footer{
+	width: 100%;
+}
+.setC{
+	margin-left:129px !important;
+	text-align: center !important;
+	margin-top: -20px !important;
+	width:150px !important;
+	float:right !important;
+	font-size:8px !important;
+}
+.transbox{
+margin-left: 38px !important;
+}
+}
+@media(max-width:384px){
+.footer{
+	width: 100%;
+}
+.setC{
+	text-align: center;
+	margin-top: -17px !important;
+}
+.transbox{
+margin-left: 35px !important;
+}
+.sales{
+		color: green;
+}
+}
+/* @media(max-width:375px){
+.footer{
+	width: 100%;
+}
+.setC{
+	margin-left:142px !important;
+	
+	margin-top: -20px !important;
+	width:150px !important;
+	float:right !important;
+	font-size:8px !important;
+}
+.transbox{
+margin-left: 12px !important;
+}
+.sales{
+		color: green;
+}
+}
+ */
+ /* Samsung Galaxy S6, S6+, S7, S7+ | 1440×2560 pixels ----------- */
+/* Portrait and Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) {
+ .footer{
+	width: 100%;
+}
+.setC{
+	margin-left:142px !important;
+	
+	margin-top: -20px !important;
+	width:150px !important;
+	float:right !important;
+	font-size:8px !important;
+}
+.transbox{
+margin-left: 12px !important;
+}
+.sales{
+		color: green;
+}
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 4) {
+.footer{
+	width: 100%;
+}
+.setC{
+	margin-left:142px !important;
+	
+	margin-top: -20px !important;
+	width:150px !important;
+	float:right !important;
+	font-size:8px !important;
+}
+.transbox{
+margin-left: 12px !important;
+}
+.sales{
+		color: green;
+}
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 4) {
+ .footer{
+	width: 100%;
+}
+.setC{
+	margin-left:142px !important;
+	
+	margin-top: -20px !important;
+	width:150px !important;
+	float:right !important;
+	font-size:8px !important;
+}
+.transbox{
+margin-left: 12px !important;
+}
+.sales{
+		color: green;
+}
+}
+@media(max-width:320px){
+
+}

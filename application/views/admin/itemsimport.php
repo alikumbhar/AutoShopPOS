@@ -1,0 +1,215 @@
+<?php $this->load->view('admin/common/header'); 
+$path = $this->extra_lib->path;
+?>
+
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+
+  	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style type="text/css">
+.btn-info{	 background: #5bc0de; }
+.btn-danger{
+	background: gray;
+}
+</style>
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+
+<?php $this->view('admin/common/left-sidebar.php');?>
+	</div>
+		<!--left-fixed -navigation-->
+		
+		<!-- header-starts -->
+		<div class="sticky-header header-section ">
+			<div class="header-left">
+				
+				<!--toggle button start-->
+				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
+				<!--toggle button end-->
+				<div class="profile_details_left"><!--notifications of menu start -->
+				<?php $this->load->view('admin/common/notification')?>
+					<div class="clearfix"> </div>
+				</div>
+				<!--notification menu end -->
+				<div class="clearfix"> </div>
+			</div>
+			<div class="header-right">
+				
+				
+			
+				
+		
+			<?php 	  $user = $this->session->userdata('userVal'); ?>
+				<div class="profile_details">		
+					<ul>
+						<li class="dropdown profile_details_drop">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<div class="profile_img">	
+									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
+									<div class="user-name">
+										<p><?= $user['fullname']; ?></p>
+										<span><?= $user['role_name']; ?></span>
+									</div>
+									<i class="fa fa-angle-down lnr"></i>
+									<i class="fa fa-angle-up lnr"></i>
+									<div class="clearfix"></div>	
+								</div>	
+							</a>
+							<ul class="dropdown-menu drp-mnu">
+								<li> <a href="<?php echo base_url().'/admin/settings';?>"><i class="fa fa-cog"></i> Settings</a> </li> 
+								<li> <a href="<?= base_url().'admin/users'; ?>"><i class="fa fa-suitcase"></i> Profile</a> </li> 
+								<li> <a href="<?php echo base_url().'Logout';?>"><i class="fa fa-sign-out"></i> Logout</a> </li>
+							</ul>
+						</li>
+					</ul>
+				</div>	
+				<div class="clearfix"> </div>				
+			</div>
+			<?php $path = $this->extra_lib->path; ?>
+			<div class="clearfix"> </div>	
+		</div>
+		<!-- //header-ends -->
+		<!-- main content start-->
+
+		<div id="page-wrapper">
+			<div class="main-page">
+				<div class="forms">
+					<?php $msg = $this->session->flashdata('msg'); ?>
+					<?php $remove = $this->session->flashdata('remove'); ?>
+					<div class="row">
+					<div class="form-three widget-shadow" style="height: 90px;">
+					<h2 class="title1">Import Items  </h2>
+					</div>
+
+			
+				<div class="form-three widget-shadow">
+					
+<?php if($msg){
+						?>
+					<div class="alert alert-success">
+  						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>								
+							     <?=  $msg; ?><strong>!</strong>
+							  </div>
+						<?php	
+							} if($remove){ ?>
+							<div class="alert alert-danger">
+  						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>									    
+							     <?=  $remove; ?><strong>!</strong>
+							  </div>
+							  <?php } ?>							
+
+
+																					
+														
+
+
+
+<form action="<?php echo base_url('admin/items/importdata'); ?>" enctype="multipart/form-data" method="post" role="form">
+<div class="form-group">
+<label for="exampleInputFile">File Upload</label>
+<input type="file" name="file" id="file" size="150">
+<p class="help-block">Only Excel/CSV File Import.</p>
+</div>
+<button type="submit" class="btn btn-default" name="submit" value="submit">Upload</button>
+</form>							
+						</div>
+
+				
+					</div>
+
+				</div>
+			</div>						
+					
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--footer-->
+		<div class="footer" style="margin-left: 116px;">
+		   <p>	<?= $this->footer->getSettingFooter();?>
+			</p>
+	   </div>
+        <!--//footer-->
+	</div>
+	
+	
+		<script src='<?php echo base_url()."assets/admin/js/"?>SidebarNav.min.js' type='text/javascript'></script>
+	<script>
+      $('.sidebar-menu').SidebarNav()
+    </script>
+	<!-- //side nav js -->
+	
+	<!-- Classie --><!-- for toggle left push menu script -->
+		<script src="<?php echo base_url()."assets/admin/js/"?>classie.js"></script>
+		<script>
+
+			$( function() {
+  	
+    $( "#datepicker" ).datepicker();
+  } );
+			
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+				
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+		</script>
+	<!-- //Classie --><!-- //for toggle left push menu script -->
+	
+	<!-- Bootstrap Core JavaScript -->
+   <script src="<?php echo base_url()."assets/admin/js/"?>bootstrap.js"> </script>
+   
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		
+		$('#employee_id').DataTable();
+	})
+
+$(document).ready(function(){
+
+	$('#state').change(function(){
+	var v = $('#state').val();
+		if(v =="1"){
+		$('#sol').hide();
+		$('#liq').show();
+	$('#liq').html(
+			'<div class="form-group"><label for="focusedinput" class="col-sm-2 control-label">Enter Ml</label><div class="col-sm-8"><input type="text" name="Specification" class="form-control1" ></div></div> '
+		)
+	}
+	else if(v =="2"){
+	$('#liq').hide();
+	$('#sol').show();
+	$('#sol').html(
+			'<div class="form-group"><label for="focusedinput" class="col-sm-2 control-label">Enter Specification</label><div class="col-sm-8"><input type="text" name="Specification" class="form-control1" ></div></div> '
+		)	
+	}
+	else if(v =="3"){
+	$('#liq').hide();
+	$('#sol').hide();
+	
+	}	
+	})
+})	
+</script>
+</body>
+</html>

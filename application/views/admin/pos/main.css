@@ -1,0 +1,23 @@
+.navbar{ background:#007bff;}
+	.nav-link , .navbar-brand{ color: #f4f4f4;border-radius: 10px 10px 10px 10px ; cursor: pointer;}
+.nav-link{ margin-right: 1em !important;}
+.nav-link:hover{ background: #000000; color: red;font-weight:bold;	}
+.navbar-collapse{ justify-content: flex-end;}
+.navbar-toggler{  background:#fff !important;}
+.navbar-collapse{
+ justify-content: flex-end;
+}
+.a1{box-shadow: 0px 5px 10px 2px #888888;margin-top:15px;border-left:2px double #8c8b8b;border-bottom:2px double #8c8b8b;border-top:2px double #8c8b8b;border-right:4px double #8c8b8b;border-radius: 10px 10px 10px 10px ;}
+.a2{border-bottom:1px double #8c8b8b;padding-bottom:20px;}
+.a3{border:1px solid black; margin-left:20px; padding-left:10px;padding-right:10px;padding-bottom:8px;padding-top:8px;}
+
+.a4{height:550px;box-shadow: 5px 5px 10px 2px #888888;margin-top:15px;border-right:2px double #8c8b8b;border-bottom:2px double #8c8b8b;border-top:2px double #8c8b8b;border-radius: 10px 10px 10px 10px ;border-left:4px double #8c8b8b;}
+.navbar1{ background:#d2edf6; border-radius: 10px 10px 10px 10px ;}
+.cl{
+	clear:left;
+}
+hr.style2 {
+	border-top: 3px double #8c8b8b;
+}
+.as{margin-left:20px;margin-right:20px;}
+.asdasdasd{border-radius: 10px 10px 10px 10px ; box-shadow: 5px 5px 10px 8px #888888;}
