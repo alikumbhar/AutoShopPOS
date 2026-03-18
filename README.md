@@ -13,4 +13,4 @@ You ARE allowed to:
 - Use it privately
 - Modify it for personal use
 
-For commercial licensing, contact: your@email.com
+For commercial licensing, contact: kumbharali@gmail.com
