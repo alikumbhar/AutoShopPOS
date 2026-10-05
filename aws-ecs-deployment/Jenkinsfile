@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+    
+    environment {
+        DOCKER_HUB_USER = credentials('dockerhub-user')
+        DOCKER_HUB_PASS = credentials('dockerhub-pass')
+        AWS_ACCESS_KEY_ID = credentials('aws-access-key')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
+        APP_NAME = "autoshop-pos"
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/alikumbhar/AutoShopPOS.git'
+            }
+        }
+        
+        stage('Build & Push Image') {
+            steps {
+                script {
+                    sh "docker build -t ${DOCKER_HUB_USER}/${APP_NAME}:${IMAGE_TAG} -f aws-ecs-deployment/Dockerfile ."
+                    sh "echo ${DOCKER_HUB_PASS} | docker login -u ${DOCKER_HUB_USER} --password-stdin"
+                    sh "docker push ${DOCKER_HUB_USER}/${APP_NAME}:${IMAGE_TAG}"
+                }
+            }
+        }
+        
+        stage('Deploy to ECS') {
+            steps {
+                script {
+                    // Update the ECS service to use the new image tag
+                    sh "aws ecs update-service --cluster ${APP_NAME}-cluster --service ${APP_NAME}-service --force-new-deployment"
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
